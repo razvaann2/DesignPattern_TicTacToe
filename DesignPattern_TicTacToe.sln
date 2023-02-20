@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DesignPattern_TicTacToe", "DesignPattern_TicTacToe\DesignPattern_TicTacToe.vcxproj", "{40A8FC8D-44C4-4C35-BE04-ECC2A11A6CE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40A8FC8D-44C4-4C35-BE04-ECC2A11A6CE8}.Debug|x64.ActiveCfg = Debug|x64
+		{40A8FC8D-44C4-4C35-BE04-ECC2A11A6CE8}.Debug|x64.Build.0 = Debug|x64
+		{40A8FC8D-44C4-4C35-BE04-ECC2A11A6CE8}.Release|x64.ActiveCfg = Release|x64
+		{40A8FC8D-44C4-4C35-BE04-ECC2A11A6CE8}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B248FB28-ECAB-4C4F-A8E7-C5717889194C}
+	EndGlobalSection
+EndGlobal
