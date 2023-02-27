@@ -18,5 +18,5 @@ public:
 	char GetSymbol();
 	bool operator==(const Player& player1);
 	
-
+	//todo: clasa separata pentru fiecare tip de player
 };

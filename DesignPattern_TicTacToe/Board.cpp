@@ -2,48 +2,48 @@
 
 Board::Board()
 {
-	for (uint8_t i = 0; i < m_Board.size(); i++)
+	for (uint8_t i = 0; i < m_board.size(); i++)
 	{
-		for (uint8_t j = 0; j < m_Board[i].size(); j++)
+		for (uint8_t j = 0; j < m_board[i].size(); j++)
 		{
-			this->m_Board[i][j] = ' ';
-			this->m_AvailableCoordinates.push_back(std::make_pair(i, j));
+			this->m_board[i][j] = ' ';
+			this->m_availableCoordinates.push_back(std::make_pair(i, j));
 		}
 	}
 }
 
 Board::Board(Board& board)
 {
-	this->m_AvailableCoordinates = board.GetAvailableCoordinates();
-	this->m_Board = board.GetBoard();
+	this->m_availableCoordinates = board.GetAvailableCoordinates();
+	this->m_board = board.GetBoard();
 }
 
 Board::~Board()
 {
-	for (auto i : m_Board)
+	for (auto i : m_board)
 		i.clear();
-	m_Board.clear();
-	m_AvailableCoordinates.clear();
+	m_board.clear();
+	m_availableCoordinates.clear();
 }
 
 void Board::SetBoard(std::vector<std::vector<char>> board)
 {
-	this->m_Board = board;
+	this->m_board = board;
 }
 
 std::vector<std::vector<char>> Board::GetBoard()
 {
-	return this->m_Board;
+	return this->m_board;
 }
 
 void Board::SetAvailableCoordinates(std::vector<std::pair<uint8_t, uint8_t>> availableCoordinates)
 {
-	this->m_AvailableCoordinates = availableCoordinates;
+	this->m_availableCoordinates = availableCoordinates;
 }
 
 std::vector<std::pair<uint8_t, uint8_t>> Board::GetAvailableCoordinates()
 {
-	return this->m_AvailableCoordinates;
+	return this->m_availableCoordinates;
 }
 
 void Board::AddSymbol(char character, Board& board,std::pair<uint8_t,uint8_t>coordinates)
