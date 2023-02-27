@@ -40,4 +40,9 @@ char Player::GetSymbol()
 	return m_Symbol;
 }
 
+bool Player::operator==(const Player& player1)
+{
+	return (player1.m_Name==this->m_Name && player1.m_Symbol==this->m_Symbol);
+}
+
 

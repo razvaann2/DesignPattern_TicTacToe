@@ -4,14 +4,15 @@
 class Game
 {
 private:
-	Player CurrentPlayer;
-	Player Player1;
-	Player Player2;
-	Board board;
+	Player m_currentPlayer;
+	Player m_player1;
+	Player m_player2;
+	Board m_board;
 public:
 	Game();
 	~Game();
-
+	bool CheckGameStatus();
+	void ChangePlayer();
 
 };
 

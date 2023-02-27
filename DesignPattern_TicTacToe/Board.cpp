@@ -2,6 +2,14 @@
 
 Board::Board()
 {
+	for (uint8_t i = 0; i < m_Board.size(); i++)
+	{
+		for (uint8_t j = 0; j < m_Board[i].size(); j++)
+		{
+			this->m_Board[i][j] = ' ';
+			this->m_AvailableCoordinates.push_back(std::make_pair(i, j));
+		}
+	}
 }
 
 Board::Board(Board& board)

@@ -16,7 +16,7 @@ public:
 	std::string GetName();
 	void SetSymbol(char Symbol);
 	char GetSymbol();
-	
+	bool operator==(const Player& player1);
 	
 
 };
