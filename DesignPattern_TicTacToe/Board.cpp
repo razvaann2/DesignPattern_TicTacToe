@@ -20,6 +20,10 @@ Board::Board(Board& board)
 
 Board::~Board()
 {
+	for (auto i : m_Board)
+		i.clear();
+	m_Board.clear();
+	m_AvailableCoordinates.clear();
 }
 
 void Board::SetBoard(std::vector<std::vector<char>> board)
