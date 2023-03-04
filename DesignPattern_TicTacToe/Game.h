@@ -1,16 +1,20 @@
 #pragma once
 #include "Player.h"
 #include "Board.h"
+#include "Human.h"
+#include "Computer.h"
 class Game
 {
 private:
-	Player m_currentPlayer;// todo: trebuie pointer
-	Player m_player1;
-	Player m_player2;
+	Player* m_currentPlayer;
+	Human* m_player1;
+	Computer* m_player2;
 	Board m_board;
 public:
 	Game();
+	Game(Game& game);
 	~Game();
+
 	bool CheckGameStatus();
 	void ChangePlayer();
 

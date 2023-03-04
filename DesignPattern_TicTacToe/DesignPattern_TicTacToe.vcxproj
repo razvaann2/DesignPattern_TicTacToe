@@ -83,7 +83,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Computer.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Human.cpp" />
     <ClCompile Include="Player.cpp" />
     <QtRcc Include="DesignPattern_TicTacToe.qrc" />
     <QtUic Include="DesignPattern_TicTacToe.ui" />
@@ -94,7 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
+    <ClInclude Include="Computer.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Human.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

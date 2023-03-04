@@ -31,7 +31,7 @@ void Board::SetBoard(std::vector<std::vector<char>> board)
 	this->m_board = board;
 }
 
-std::vector<std::vector<char>> Board::GetBoard()
+std::vector<std::vector<char>>& Board::GetBoard()
 {
 	return this->m_board;
 }
@@ -41,12 +41,12 @@ void Board::SetAvailableCoordinates(std::vector<std::pair<uint8_t, uint8_t>> ava
 	this->m_availableCoordinates = availableCoordinates;
 }
 
-std::vector<std::pair<uint8_t, uint8_t>> Board::GetAvailableCoordinates()
+std::vector<std::pair<uint8_t, uint8_t>> Board::GetAvailableCoordinates() const
 {
 	return this->m_availableCoordinates;
 }
 
-void Board::AddSymbol(char character, Board& board,std::pair<uint8_t,uint8_t>coordinates)
+const void Board::AddSymbol(const char character, Board& board, const std::pair<uint8_t,uint8_t>coordinates) const
 {
 	board.GetBoard()[coordinates.first][coordinates.second] = character;
 	board.GetAvailableCoordinates().erase(std::find(board.GetAvailableCoordinates().begin(), board.GetAvailableCoordinates().end(), coordinates));
