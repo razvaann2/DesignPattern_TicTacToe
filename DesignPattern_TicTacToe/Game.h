@@ -7,8 +7,8 @@ class Game
 {
 private:
 	Player* m_currentPlayer;
-	Human* m_player1;
-	Computer* m_player2;
+	Player* m_player1=new Human();
+	Player* m_player2=new Computer();
 	Board m_board;
 public:
 	Game();
@@ -26,3 +26,4 @@ public:
 //proiect de tip lib sau dll care sa contina logica jocului si 2 de ui care sa se lege la dll
 //sa avem o interfata
 //testarea in googlemok
+//diagrama UML
