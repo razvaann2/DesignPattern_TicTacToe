@@ -21,3 +21,8 @@ public:
 };
 
 //#include "../DesignPattern_TicTacToe/Game.h" cale catre header ul respectiv
+
+//sa nu contina cod redundant
+//proiect de tip lib sau dll care sa contina logica jocului si 2 de ui care sa se lege la dll
+//sa avem o interfata
+//testarea in googlemok

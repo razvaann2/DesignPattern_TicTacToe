@@ -8,8 +8,6 @@ public:
 	Human(char m_Symbol, std::string m_Name = " ");
 	Human(Human& human);
 	~Human();
-	void SetName(std::string Name);
-	std::string GetName();
-	void SetSymbol(char Symbol);
-	char GetSymbol();
+	
+	std::pair<uint8_t, uint8_t> PickPosition(std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates);
 };
