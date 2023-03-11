@@ -14,11 +14,11 @@ public:
     DesignPattern_TicTacToe(QWidget *parent = nullptr);
     ~DesignPattern_TicTacToe();
     Game game;
-   // QLabel x_label;
-    //QLabel O_label;
+ 
 
 protected:
     void paintEvent(QPaintEvent* event) override;
+    void paintWinner(int i);
 private:
     Ui::DesignPattern_TicTacToeClass ui;
 private slots:

@@ -19,7 +19,7 @@ public:
 	Game(Game& game);
 	~Game();
 
-	bool CheckGameStatus();
+	int CheckGameStatus();
 	void ChangePlayer();
 
 };

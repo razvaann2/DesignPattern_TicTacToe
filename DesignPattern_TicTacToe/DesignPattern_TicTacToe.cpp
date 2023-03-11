@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Game.h"
 #include <qmessagebox.h>
+#include <qtimer.h>
 
 DesignPattern_TicTacToe::DesignPattern_TicTacToe(QWidget *parent)
     : QMainWindow(parent)
@@ -53,10 +54,57 @@ void DesignPattern_TicTacToe::paintEvent(QPaintEvent* event)
     
     painter.drawLine(width / 3, 0, width / 3, height);
     painter.drawLine(2 * width / 3, 0, 2 * width / 3, height);
-    
+    if (game.CheckGameStatus() > -1)
+    {
+        paintWinner(game.CheckGameStatus());
+    }
+}
+void DesignPattern_TicTacToe::paintWinner(int i)
+{
+    QPainter painter(this);
+    painter.setPen(Qt::red);
+    painter.setOpacity(0.5);
+    switch (i)
+    {
+    case 3:
+        painter.drawLine(0, height() / 6, width(), height() / 6); // first row
+        update();
+        break;
+    case 4:
+        painter.drawLine(0, height() / 2, width(), height() / 2); // second row
+        update();
+        break;
+    case 5:
+        painter.drawLine(0, height() * 5 / 6, width(), height() * 5 / 6); // third row
+        update();
+        break;
+    case 0:
+        painter.drawLine(width() / 6, 0, width() / 6, height()); // first column
+        update();
+        break;
+    case 1:
+        painter.drawLine(width() / 2, 0, width() / 2, height()); // second column
+        update();
+        break;
+    case 2:
+        painter.drawLine(width() * 5 / 6, 0, width() * 5 / 6, height()); // third column
+        update();
+        break;
+    case 6:
+        painter.drawLine(0, 0, width(), height()); // diagonal from top left to bottom right
+        update();
+        break;
+    case 7:
+        painter.drawLine(0, height(), width(), 0); // diagonal from bottom left to top right
+        update();
+        break;
+    default:
+        break;
+    }
 }
 void DesignPattern_TicTacToe::onButtonClicked()
 {
+
     QPushButton* button = qobject_cast<QPushButton*>(sender());
 
 
@@ -110,11 +158,15 @@ void DesignPattern_TicTacToe::onButtonClicked()
         label->show();
       
         button->deleteLater();
-
-        if (game.CheckGameStatus() == true)
+        update();
+        if (game.CheckGameStatus() > -1)
         {
-            QMessageBox::information(nullptr, "Game Result", "Player won");
-            this->close();
+            paintWinner(game.CheckGameStatus());
+            this->update(); 
+           /* QTimer::singleShot(1000, this, [=]() {
+                QMessageBox::information(nullptr, "Game Result", "Player won");
+                this->close();
+                });*/
         }
         game.ChangePlayer();
         if (game.m_board.GetAvailableCoordinates().empty())
@@ -122,9 +174,11 @@ void DesignPattern_TicTacToe::onButtonClicked()
             QMessageBox::information(nullptr, "Game Result", "No more moves");
             this->close();
         }
+        update();
     }
-    
+    update();
 }
+
 
 DesignPattern_TicTacToe::~DesignPattern_TicTacToe()
 {}

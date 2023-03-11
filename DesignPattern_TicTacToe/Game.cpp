@@ -17,23 +17,23 @@ Game::~Game()
 {
 }
 
-bool Game::CheckGameStatus()
+int Game::CheckGameStatus()
 {
 	for (uint8_t i = 0; i < m_board.GetBoard().size(); i++)
 	{
 		if (m_board.GetBoard()[i][0] == m_currentPlayer->GetSymbol() && m_board.GetBoard()[i][1] == m_currentPlayer->GetSymbol() && m_board.GetBoard()[i][2] == m_currentPlayer->GetSymbol())
-			return true;
+			return i;
 		if (m_board.GetBoard()[0][i] == m_currentPlayer->GetSymbol() && m_board.GetBoard()[1][i] == m_currentPlayer->GetSymbol() && m_board.GetBoard()[2][i] == m_currentPlayer->GetSymbol())
-			return true;
+			return 3+i;
 	}
 
 	if (m_board.GetBoard()[0][0] == m_currentPlayer->GetSymbol() && m_board.GetBoard()[1][1] == m_currentPlayer->GetSymbol() && m_board.GetBoard()[2][2] == m_currentPlayer->GetSymbol())
-		return true;
+		return 6;
 	
 	if (m_board.GetBoard()[2][0] == m_currentPlayer->GetSymbol() && m_board.GetBoard()[1][1] == m_currentPlayer->GetSymbol() && m_board.GetBoard()[0][2] == m_currentPlayer->GetSymbol())
-		return true;
+		return 7;
 
-	return false;
+	return -1;
 }
 
 void Game::ChangePlayer()
