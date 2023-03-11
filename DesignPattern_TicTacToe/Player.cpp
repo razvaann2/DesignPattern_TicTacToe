@@ -1,5 +1,6 @@
 #include "Player.h"
 
+
 Player::Player(char m_Symbol, std::string m_Name)
 {
 	this->m_name = m_Name;
@@ -14,6 +15,8 @@ Player::Player(Player& player)
 
 Player::Player()
 {
+	this->m_name = {};
+	this->m_symbol = '\0';
 }
 
 Player::~Player()
@@ -34,7 +37,12 @@ void Player::SetSymbol(char Symbol)
 
 char Player::GetSymbol()
 {
-	return 0;
+	return m_symbol;
+}
+
+std::pair<uint8_t, uint8_t> Player::PickPosition(const std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates)
+{
+	return std::pair<uint8_t, uint8_t>();
 }
 
 

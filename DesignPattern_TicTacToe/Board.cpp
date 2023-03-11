@@ -1,7 +1,8 @@
 #include "Board.h"
 
-Board::Board()
+Board::Board(): m_board(3, std::vector<char>(3))
 {
+		
 	for (uint8_t i = 0; i < m_board.size(); i++)
 	{
 		for (uint8_t j = 0; j < m_board[i].size(); j++)
@@ -41,12 +42,11 @@ void Board::SetAvailableCoordinates(std::vector<std::pair<uint8_t, uint8_t>> ava
 	this->m_availableCoordinates = availableCoordinates;
 }
 
-std::vector<std::pair<uint8_t, uint8_t>> Board::GetAvailableCoordinates() const
+std::vector<std::pair<uint8_t, uint8_t>>& Board::GetAvailableCoordinates() 
 {
-	return this->m_availableCoordinates;
+	return m_availableCoordinates;
 }
-
-const void Board::AddSymbol(const char character, Board& board, const std::pair<uint8_t,uint8_t>coordinates) const
+ void Board::AddSymbol(const char character, Board& board, const std::pair<uint8_t,uint8_t>coordinates) 
 {
 	board.GetBoard()[coordinates.first][coordinates.second] = character;
 	board.GetAvailableCoordinates().erase(std::find(board.GetAvailableCoordinates().begin(), board.GetAvailableCoordinates().end(), coordinates));

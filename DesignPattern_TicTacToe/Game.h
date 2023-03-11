@@ -3,12 +3,16 @@
 #include "Board.h"
 #include "Human.h"
 #include "Computer.h"
+#include <memory>
 class Game
 {
-private:
-	Player* m_currentPlayer;
-	Player* m_player1=new Human();
-	Player* m_player2=new Computer();
+public:
+	/*Player* m_currentPlayer= new Player();
+	Player* m_player1 = new Human();
+	Player* m_player2 = new Computer();*/
+	std::shared_ptr<Player>m_currentPlayer;
+	IPlayer m_player1;
+	IPlayer m_player2;
 	Board m_board;
 public:
 	Game();

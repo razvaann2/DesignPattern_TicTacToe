@@ -2,6 +2,12 @@
 #include <cstdlib>
 #include <ctime>
 
+//IPlayer Player::Produce(EPlayerType type)
+//{
+//	if (type == EPlayerType::Computer)
+//		return std::make_shared<Computer>();
+//	return{};
+//}
 Computer::Computer()
 {
 }

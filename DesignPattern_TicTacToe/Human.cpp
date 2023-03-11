@@ -1,5 +1,15 @@
 #include "Human.h"
+#include "Computer.h"
 
+
+//IPlayer Player::Produce(EPlayerType type)
+//{
+//	if (type == EPlayerType::Human)
+//		return std::make_shared<Human>();
+//	if (type == EPlayerType::Computer)
+//		return std::make_shared<Computer>();
+//	return{};
+//}
 Human::Human()
 {
 }
@@ -26,22 +36,4 @@ std::pair<uint8_t, uint8_t> Human::PickPosition(std::vector<std::pair<uint8_t, u
 	return std::pair<uint8_t, uint8_t>();
 }
 
-void Human::SetName(std::string Name)
-{
-	m_name = Name;
-}
 
-std::string Human::GetName()
-{
-	return m_name;
-}
-
-void Human::SetSymbol(char Symbol)
-{
-	m_symbol = Symbol;
-}
-
-char Human::GetSymbol()
-{
-	return m_symbol;
-}

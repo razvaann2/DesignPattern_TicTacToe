@@ -1,6 +1,13 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <utility>
+#include <memory>
+enum class EPlayerType
+{
+	Human,
+	Computer
+};
 class Player
 {
 
@@ -17,10 +24,8 @@ public:
 	std::string GetName();
 	void SetSymbol(char Symbol);
 	char GetSymbol();
-	/*virtual void SetName(std::string Name) = 0;
-	virtual std::string GetName() = 0;
-	virtual void SetSymbol(char Symbol) = 0;
-	virtual char GetSymbol() = 0;*/
-	virtual std::pair<uint8_t, uint8_t> PickPosition(const std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates)=0;
-	//todo: clasa separata pentru fiecare tip de player
+	//static IPlayer Produce(EPlayerType type);
+	virtual std::pair<uint8_t, uint8_t> PickPosition(const std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates);
+	
 };
+using IPlayer = std::shared_ptr<Player>;

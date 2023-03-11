@@ -2,6 +2,10 @@
 
 Game::Game()
 {
+	m_currentPlayer = std::make_shared<Player>();
+	m_player1 = std::make_shared<Human>('X');
+	m_player2 = std::make_shared<Human>('O');
+	m_currentPlayer = m_player1;
 }
 
 Game::Game(Game& game)
@@ -35,7 +39,13 @@ bool Game::CheckGameStatus()
 void Game::ChangePlayer()
 {
 	if (m_currentPlayer == m_player1)
-		m_currentPlayer = m_player2;
+	{
+		//m_currentPlayer.reset();
+	m_currentPlayer = m_player2;
+	}
 	else
+	{
+		//m_currentPlayer.reset();
 		m_currentPlayer = m_player1;
+	}
 }

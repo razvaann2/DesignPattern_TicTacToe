@@ -9,5 +9,5 @@ public:
 	Human(Human& human);
 	~Human();
 	
-	std::pair<uint8_t, uint8_t> PickPosition(std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates);
+	std::pair<uint8_t, uint8_t> PickPosition(std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates) ;
 };
