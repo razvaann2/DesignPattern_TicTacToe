@@ -1,5 +1,6 @@
 #include "Human.h"
 #include "Computer.h"
+#include <iostream>
 
 
 //IPlayer Player::Produce(EPlayerType type)
@@ -30,10 +31,21 @@ Human::~Human()
 {
 }
 
-std::pair<uint8_t, uint8_t> Human::PickPosition(std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates)
+std::pair<uint8_t, uint8_t> Human::PickPosition(const std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates)
 {
-	//cin o pereche, verific daca e in vector(valabilitate) si daca nu e recitesc.
-	return std::pair<uint8_t, uint8_t>();
+	while (true)
+	{
+		int number;
+		std::cin >> number;
+		number--;
+		std::pair<uint8_t, uint8_t> position = std::make_pair(number / 3, number % 3);
+		for (auto i : availableCoordinates)
+		{
+			if (i == position)
+				return position;
+		}
+		std::cout << "Invalid position" << std::endl << std::endl;
+	}
 }
 
 

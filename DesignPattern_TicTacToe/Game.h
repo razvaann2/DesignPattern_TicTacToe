@@ -18,7 +18,6 @@ public:
 	Game();
 	Game(Game& game);
 	~Game();
-
 	int CheckGameStatus();
 	void ChangePlayer();
 

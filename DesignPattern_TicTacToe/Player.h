@@ -25,7 +25,7 @@ public:
 	void SetSymbol(char Symbol);
 	char GetSymbol();
 	//static IPlayer Produce(EPlayerType type);
-	virtual std::pair<uint8_t, uint8_t> PickPosition(const std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates);
+	virtual std::pair<uint8_t, uint8_t> PickPosition(const std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates) = 0;
 	
 };
 using IPlayer = std::shared_ptr<Player>;

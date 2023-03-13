@@ -40,9 +40,6 @@ char Player::GetSymbol()
 	return m_symbol;
 }
 
-std::pair<uint8_t, uint8_t> Player::PickPosition(const std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates)
-{
-	return std::pair<uint8_t, uint8_t>();
-}
+
 
 

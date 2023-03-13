@@ -36,7 +36,7 @@ DesignPattern_TicTacToe::DesignPattern_TicTacToe(QWidget *parent)
         connect(buttons[i], SIGNAL(clicked()), this, SLOT(onButtonClicked()));
     }
     
-
+    game.ChangePlayer();
 }
 void DesignPattern_TicTacToe::paintEvent(QPaintEvent* event)
 {
@@ -106,7 +106,7 @@ void DesignPattern_TicTacToe::onButtonClicked()
 {
 
     QPushButton* button = qobject_cast<QPushButton*>(sender());
-
+    game.ChangePlayer();
 
     if (button) {
         
@@ -142,12 +142,12 @@ void DesignPattern_TicTacToe::onButtonClicked()
         if (game.m_currentPlayer->GetSymbol() == 'X') {
             
             label->setText("X");
-            game.m_board.AddSymbol('X', game.m_board, std::make_pair(x,y));
+            game.m_board.AddSymbol('X', std::make_pair(x,y));
         }
         else if(game.m_currentPlayer->GetSymbol()=='O') {
            
             label->setText("O");
-            game.m_board.AddSymbol('O', game.m_board, std::make_pair(x, y));
+            game.m_board.AddSymbol('O', std::make_pair(x, y));
 
         }
         label->setFixedSize(button->size());
@@ -168,7 +168,7 @@ void DesignPattern_TicTacToe::onButtonClicked()
                 this->close();
                 });*/
         }
-        game.ChangePlayer();
+        
         if (game.m_board.GetAvailableCoordinates().empty())
         {
             QMessageBox::information(nullptr, "Game Result", "No more moves");

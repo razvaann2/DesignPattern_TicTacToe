@@ -29,12 +29,11 @@ Computer::~Computer()
 
 
 
-std::pair<uint8_t, uint8_t> Computer::PickPosition(std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates)
+std::pair<uint8_t, uint8_t> Computer::PickPosition(const std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates)
 {
 	std::pair<uint8_t, uint8_t> position;
 	std::srand(std::time(nullptr));
 	int poz = std::rand() % availableCoordinates.size();
 	position = availableCoordinates[poz];
-	availableCoordinates.erase(availableCoordinates.begin() + poz);
 	return position;
 }
