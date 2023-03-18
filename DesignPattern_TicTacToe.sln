@@ -5,12 +5,9 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DesignPattern_TicTacToe", "DesignPattern_TicTacToe\DesignPattern_TicTacToe.vcxproj", "{40A8FC8D-44C4-4C35-BE04-ECC2A11A6CE8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TicTacToe_ui", "TicTacToe_ui\TicTacToe_ui.vcxproj", "{AAB98362-1F16-4A37-9783-121A5B5220A5}"
-	ProjectSection(ProjectDependencies) = postProject
-		{40A8FC8D-44C4-4C35-BE04-ECC2A11A6CE8} = {40A8FC8D-44C4-4C35-BE04-ECC2A11A6CE8}
-	EndProjectSection
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TicTacToe_Console", "TicTacToe_Console\TicTacToe_Console.vcxproj", "{CB2460C7-5A0B-4F2E-897C-2F815A256215}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TicTacToeUI", "TicTacToeUI\TicTacToeUI.vcxproj", "{CA77A873-17C3-4A78-8ED3-0ECBC09F9113}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,14 +25,6 @@ Global
 		{40A8FC8D-44C4-4C35-BE04-ECC2A11A6CE8}.Release|x64.Build.0 = Release|x64
 		{40A8FC8D-44C4-4C35-BE04-ECC2A11A6CE8}.Release|x86.ActiveCfg = Release|x64
 		{40A8FC8D-44C4-4C35-BE04-ECC2A11A6CE8}.Release|x86.Build.0 = Release|x64
-		{AAB98362-1F16-4A37-9783-121A5B5220A5}.Debug|x64.ActiveCfg = Debug|x64
-		{AAB98362-1F16-4A37-9783-121A5B5220A5}.Debug|x64.Build.0 = Debug|x64
-		{AAB98362-1F16-4A37-9783-121A5B5220A5}.Debug|x86.ActiveCfg = Debug|x64
-		{AAB98362-1F16-4A37-9783-121A5B5220A5}.Debug|x86.Build.0 = Debug|x64
-		{AAB98362-1F16-4A37-9783-121A5B5220A5}.Release|x64.ActiveCfg = Release|x64
-		{AAB98362-1F16-4A37-9783-121A5B5220A5}.Release|x64.Build.0 = Release|x64
-		{AAB98362-1F16-4A37-9783-121A5B5220A5}.Release|x86.ActiveCfg = Release|x64
-		{AAB98362-1F16-4A37-9783-121A5B5220A5}.Release|x86.Build.0 = Release|x64
 		{CB2460C7-5A0B-4F2E-897C-2F815A256215}.Debug|x64.ActiveCfg = Debug|x64
 		{CB2460C7-5A0B-4F2E-897C-2F815A256215}.Debug|x64.Build.0 = Debug|x64
 		{CB2460C7-5A0B-4F2E-897C-2F815A256215}.Debug|x86.ActiveCfg = Debug|Win32
@@ -44,6 +33,14 @@ Global
 		{CB2460C7-5A0B-4F2E-897C-2F815A256215}.Release|x64.Build.0 = Release|x64
 		{CB2460C7-5A0B-4F2E-897C-2F815A256215}.Release|x86.ActiveCfg = Release|Win32
 		{CB2460C7-5A0B-4F2E-897C-2F815A256215}.Release|x86.Build.0 = Release|Win32
+		{CA77A873-17C3-4A78-8ED3-0ECBC09F9113}.Debug|x64.ActiveCfg = Debug|x64
+		{CA77A873-17C3-4A78-8ED3-0ECBC09F9113}.Debug|x64.Build.0 = Debug|x64
+		{CA77A873-17C3-4A78-8ED3-0ECBC09F9113}.Debug|x86.ActiveCfg = Debug|x64
+		{CA77A873-17C3-4A78-8ED3-0ECBC09F9113}.Debug|x86.Build.0 = Debug|x64
+		{CA77A873-17C3-4A78-8ED3-0ECBC09F9113}.Release|x64.ActiveCfg = Release|x64
+		{CA77A873-17C3-4A78-8ED3-0ECBC09F9113}.Release|x64.Build.0 = Release|x64
+		{CA77A873-17C3-4A78-8ED3-0ECBC09F9113}.Release|x86.ActiveCfg = Release|x64
+		{CA77A873-17C3-4A78-8ED3-0ECBC09F9113}.Release|x86.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

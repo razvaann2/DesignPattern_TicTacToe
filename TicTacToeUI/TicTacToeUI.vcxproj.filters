@@ -23,10 +23,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="TicTacToe_ui.ui">
+    <QtRcc Include="TicTacToeUI.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtUic Include="TicTacToeUI.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <ClCompile Include="TicTacToe_ui.cpp">
+    <QtMoc Include="TicTacToeUI.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClCompile Include="TicTacToeUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -34,10 +40,5 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="TicTacToe_ui.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
   </ItemGroup>
 </Project>

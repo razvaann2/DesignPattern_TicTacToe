@@ -2,9 +2,9 @@
 
 #include <QPainter>
 #include <QtWidgets/QMainWindow>
+#include "ui_TicTacToeUI.h"
 #include <qpushbutton.h>
 #include "Game.h"
-#include "ui_DesignPattern_TicTacToe.h"
 #include <qlabel.h>
 #include "Player.h"
 #include "Game.h"
@@ -14,18 +14,18 @@
 #include <random>
 
 
-class TicTacToe_ui : public QMainWindow
+class TicTacToeUI : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    TicTacToe_ui(QWidget* parent = nullptr);
-    ~TicTacToe_ui();
+    TicTacToeUI(QWidget* parent = nullptr);
+    ~TicTacToeUI();
 
-    void SetGame(IGamePtr game)
+    /*void SetGame(IGamePtr game)
     {
         this->game = game;
-    }
+    }*/
 
     Game game;
     std::vector<QPushButton*> buttons;
@@ -38,7 +38,7 @@ protected:
     void paintEvent(QPaintEvent* event) override;
     void paintWinner(int i);
 private:
-   // Ui::TicTacToe_ui Class ui;
+    Ui::TicTacToeUIClass ui;
 private slots:
     void onButtonClicked();
 };
