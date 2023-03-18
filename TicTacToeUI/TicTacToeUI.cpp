@@ -1,7 +1,7 @@
-#include "DesignPattern_TicTacToe.h"
+#include "TicTacToeUI.h"
 
 
-DesignPattern_TicTacToe::DesignPattern_TicTacToe(QWidget* parent)
+TicTacToeUI::TicTacToeUI(QWidget* parent)
     : QMainWindow(parent)
 {
     srand(time(0));
@@ -40,7 +40,7 @@ DesignPattern_TicTacToe::DesignPattern_TicTacToe(QWidget* parent)
 
 }
 
-void DesignPattern_TicTacToe::paintEvent(QPaintEvent* event)
+void TicTacToeUI::paintEvent(QPaintEvent* event)
 {
     Q_UNUSED(event);
 
@@ -99,7 +99,7 @@ void DesignPattern_TicTacToe::paintEvent(QPaintEvent* event)
         }
     }
 }
-void DesignPattern_TicTacToe::paintWinner(int i)
+void TicTacToeUI::paintWinner(int i)
 {
     QPainter painter(this);
     painter.setPen(Qt::red);
@@ -142,7 +142,7 @@ void DesignPattern_TicTacToe::paintWinner(int i)
         break;
     }
 }
-void DesignPattern_TicTacToe::onButtonClicked()
+void TicTacToeUI::onButtonClicked()
 {
 
     QPushButton* button = qobject_cast<QPushButton*>(sender());
@@ -179,10 +179,10 @@ void DesignPattern_TicTacToe::onButtonClicked()
 }
 
 
-DesignPattern_TicTacToe::~DesignPattern_TicTacToe()
+TicTacToeUI::~TicTacToeUI()
 {}
 
-std::pair<uint8_t, uint8_t> DesignPattern_TicTacToe::Pickxy(QPushButton* button_aux)
+std::pair<uint8_t, uint8_t> TicTacToeUI::Pickxy(QPushButton* button_aux)
 {
     uint8_t x, y;
     if (button_aux->pos().x() == 0)
@@ -212,7 +212,7 @@ std::pair<uint8_t, uint8_t> DesignPattern_TicTacToe::Pickxy(QPushButton* button_
     return std::make_pair(x, y);
 }
 
-void DesignPattern_TicTacToe::DrawLabel(QPushButton* button_aux)
+void TicTacToeUI::DrawLabel(QPushButton* button_aux)
 {
     QLabel* label = new QLabel(this);
     label->setFont(QFont("Arial", 150));
@@ -220,7 +220,7 @@ void DesignPattern_TicTacToe::DrawLabel(QPushButton* button_aux)
     if (game.m_currentPlayer->GetSymbol() == 'X') {
 
         label->setText("X");
-        game.m_board.AddSymbol('X',Pickxy(button_aux));
+        game.m_board.AddSymbol('X', Pickxy(button_aux));
     }
     else if (game.m_currentPlayer->GetSymbol() == 'O') {
 

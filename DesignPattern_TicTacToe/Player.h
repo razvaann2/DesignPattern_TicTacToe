@@ -3,11 +3,15 @@
 #include <vector>
 #include <utility>
 #include <memory>
+
 enum class EPlayerType
 {
 	Human,
 	Computer
 };
+
+using IPlayerPtr = std::shared_ptr<class Player>;
+
 class Player
 {
 
@@ -20,12 +24,12 @@ public:
 	Player(Player& player);
 	Player();
 	~Player();
+
 	void SetName(std::string Name);
 	std::string GetName();
 	void SetSymbol(char Symbol);
 	char GetSymbol();
-	//static IPlayer Produce(EPlayerType type);
+	static IPlayerPtr Produce(EPlayerType type);
 	virtual std::pair<uint8_t, uint8_t> PickPosition(const std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates) = 0;
 	
 };
-using IPlayer = std::shared_ptr<Player>;

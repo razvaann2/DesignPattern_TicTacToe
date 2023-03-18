@@ -1,6 +1,5 @@
 #include <iostream>
-#include "DesignPattern_TicTacToe.h"
-#include <QtWidgets/QApplication>
+#include "Game.h"
 
 void DisplayBoard(Game& game, bool helper)
 {
@@ -55,25 +54,8 @@ void ConsoleGame()
 	}
 }
 
-int main(int argc, char *argv[])
+int main()
 {
-    std::cout << "Click 1 for console version and 2 for Qt version\n";
-    int gameType;
-    do 
-    {
-        std::cin >> gameType;
-        if (gameType != 1 && gameType != 2)
-            std::cout << "Select a valid option\n";
-    } while (gameType != 1 && gameType != 2);
-    if (gameType == 2)
-    {
-		std::cout << "Qt version selected\n";
-        QApplication a(argc, argv);
-        DesignPattern_TicTacToe w;
-        w.show();
-        return a.exec();
-    }
-	std::cout << "Console version selected\n";
 	ConsoleGame();
-    return 0;
+	return 0;
 }

@@ -3,14 +3,15 @@
 #include <iostream>
 
 
-//IPlayer Player::Produce(EPlayerType type)
-//{
-//	if (type == EPlayerType::Human)
-//		return std::make_shared<Human>();
-//	if (type == EPlayerType::Computer)
-//		return std::make_shared<Computer>();
-//	return{};
-//}
+IPlayerPtr Player::Produce(EPlayerType type)
+{
+	if (type == EPlayerType::Human)
+		return std::make_shared<Human>();
+	if (type == EPlayerType::Computer)
+		return std::make_shared<Computer>();
+	return{};
+}
+
 Human::Human()
 {
 }

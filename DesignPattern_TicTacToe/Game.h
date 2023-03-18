@@ -4,15 +4,31 @@
 #include "Human.h"
 #include "Computer.h"
 #include <memory>
-class Game
+
+using IGamePtr = std::shared_ptr<class IGame>;
+
+class IGame
+{
+public:
+	IGamePtr Produce();
+};
+
+class IGameListener
+{
+public:
+	// OnMoveMade()
+	// OnGameOver()
+};
+
+class Game : public IGame
 {
 public:
 	/*Player* m_currentPlayer= new Player();
 	Player* m_player1 = new Human();
 	Player* m_player2 = new Computer();*/
 	std::shared_ptr<Player>m_currentPlayer;
-	IPlayer m_player1;
-	IPlayer m_player2;
+	IPlayerPtr m_player1;
+	IPlayerPtr m_player2;
 	Board m_board;
 public:
 	Game();
