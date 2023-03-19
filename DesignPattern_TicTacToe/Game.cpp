@@ -7,12 +7,12 @@ IGamePtr IGame::Produce()
 
 Game::Game()
 {
-	//m_player1 = std::make_shared<Human>();
-	m_player1->Produce(EPlayerType::Human);
+	m_player1 = std::make_shared<Human>();
+	//m_player1->Produce(EPlayerType::Human);
 	m_player1->SetSymbol('X');
-	//m_player2 = std::make_shared<Computer>();
+	m_player2 = std::make_shared<Computer>();
 	//m_player2->Produce(EPlayerType::Human);
-	m_player2->Produce(EPlayerType::Computer);
+	//m_player2->Produce(EPlayerType::Computer);
 	m_player2->SetSymbol('O');
 	m_currentPlayer = m_player1;
 }
