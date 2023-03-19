@@ -42,7 +42,3 @@ char Player::GetSymbol()
 {
 	return this->m_symbol;
 }
-
-
-
-

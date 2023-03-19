@@ -48,5 +48,3 @@ std::pair<uint8_t, uint8_t> Human::PickPosition(const std::vector<std::pair<uint
 		std::cout << "Invalid position" << std::endl << std::endl;
 	}
 }
-
-

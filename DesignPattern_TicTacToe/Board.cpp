@@ -56,7 +56,8 @@ std::vector<std::pair<uint8_t, uint8_t>>& Board::GetAvailableCoordinates()
 {
 	return m_availableCoordinates;
 }
- void Board::AddSymbol(const char character, const std::pair<uint8_t,uint8_t>coordinates) 
+
+void Board::AddSymbol(const char character, const std::pair<uint8_t,uint8_t>coordinates) 
 {
 	m_board[coordinates.first][coordinates.second] = character;
 	m_availableCoordinates.erase(std::find(m_availableCoordinates.begin(), m_availableCoordinates.end(), coordinates));

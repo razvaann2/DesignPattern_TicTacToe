@@ -49,12 +49,10 @@ void Game::ChangePlayer()
 {
 	if (m_currentPlayer == m_player1)
 	{
-		//m_currentPlayer.reset();
-	m_currentPlayer = m_player2;
+		m_currentPlayer = m_player2;
 	}
 	else
 	{
-		//m_currentPlayer.reset();
 		m_currentPlayer = m_player1;
 	}
 }
