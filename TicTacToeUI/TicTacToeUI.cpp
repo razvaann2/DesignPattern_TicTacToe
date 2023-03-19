@@ -86,7 +86,7 @@ void TicTacToeUI::paintEvent(QPaintEvent* event)
                 {
                     paintWinner(game.CheckGameStatus());
                     this->update();
-                    QTimer::singleShot(1000, this, [=]() {
+                    QTimer::singleShot(100, this, [=]() {
                         QMessageBox::information(nullptr, "Game Result", "Computer won");
                         this->close();
                         });
@@ -158,7 +158,7 @@ void TicTacToeUI::onButtonClicked()
         {
             paintWinner(game.CheckGameStatus());
             this->update();
-            QTimer::singleShot(1000, this, [=]() {
+            QTimer::singleShot(100, this, [=]() {
                 QMessageBox::information(nullptr, "Game Result", "Player won");
                 this->close();
                 });

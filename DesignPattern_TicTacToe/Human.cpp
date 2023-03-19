@@ -2,7 +2,6 @@
 #include "Computer.h"
 #include <iostream>
 
-
 IPlayerPtr Player::Produce(EPlayerType type)
 {
 	if (type == EPlayerType::Human)
@@ -14,6 +13,7 @@ IPlayerPtr Player::Produce(EPlayerType type)
 
 Human::Human()
 {
+
 }
 
 Human::Human(char Symbol, std::string Name)

@@ -4,38 +4,26 @@
 #include "Human.h"
 #include "Computer.h"
 #include <memory>
-
-using IGamePtr = std::shared_ptr<class IGame>;
-
-class IGame
-{
-public:
-	IGamePtr Produce();
-};
-
-class IGameListener
-{
-public:
-	// OnMoveMade()
-	// OnGameOver()
-};
+#include "IGame.h"
 
 class Game : public IGame
 {
 public:
-	/*Player* m_currentPlayer= new Player();
-	Player* m_player1 = new Human();
-	Player* m_player2 = new Computer();*/
-	std::shared_ptr<Player>m_currentPlayer;
+	IPlayerPtr m_currentPlayer;
 	IPlayerPtr m_player1;
 	IPlayerPtr m_player2;
 	Board m_board;
+	//std::vector<IGameListenerPtr> m_listeners;
 public:
 	Game();
 	Game(Game& game);
 	~Game();
-	int CheckGameStatus();
-	void ChangePlayer();
+	int CheckGameStatus() override;
+	void ChangePlayer() override;
+	/*void AddListener(IGameListenerPtr listener) override;
+	void RemoveListener(IGameListenerPtr listener) override;
+	void NotifyMoveMade();
+	void NotifyGameOver();*/
 
 };
 

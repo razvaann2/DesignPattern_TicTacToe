@@ -1,5 +1,6 @@
 #include "Player.h"
-
+#include "Human.h"
+#include "Computer.h"
 
 Player::Player(char m_Symbol, std::string m_Name)
 {
@@ -24,6 +25,7 @@ Player::~Player()
 }
 void Player::SetName(std::string Name)
 {
+	this->m_name = Name;
 }
 
 std::string Player::GetName()
@@ -33,11 +35,12 @@ std::string Player::GetName()
 
 void Player::SetSymbol(char Symbol)
 {
+	this->m_symbol = Symbol;
 }
 
 char Player::GetSymbol()
 {
-	return m_symbol;
+	return this->m_symbol;
 }
 
 

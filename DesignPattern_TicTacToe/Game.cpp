@@ -1,10 +1,19 @@
 #include "Game.h"
 
+IGamePtr IGame::Produce()
+{
+	return std::make_shared<Game>();
+}
+
 Game::Game()
 {
-	//m_currentPlayer = std::make_shared<Player>();
-	m_player1 = std::make_shared<Human>('X');
-	m_player2 = std::make_shared<Computer>('O');
+	//m_player1 = std::make_shared<Human>();
+	m_player1->Produce(EPlayerType::Human);
+	m_player1->SetSymbol('X');
+	//m_player2 = std::make_shared<Computer>();
+	//m_player2->Produce(EPlayerType::Human);
+	m_player2->Produce(EPlayerType::Computer);
+	m_player2->SetSymbol('O');
 	m_currentPlayer = m_player1;
 }
 
@@ -49,3 +58,30 @@ void Game::ChangePlayer()
 		m_currentPlayer = m_player1;
 	}
 }
+
+//void Game::AddListener(IGameListenerPtr listener)
+//{
+//	m_listeners.push_back(listener);
+//}
+//
+//void Game::RemoveListener(IGameListenerPtr listener)
+//{
+//	auto it = std::find(m_listeners.begin(), m_listeners.end(), listener);
+//	if (it != m_listeners.end()) {
+//		m_listeners.erase(it);
+//	}
+//}
+//
+//void Game::NotifyMoveMade()
+//{
+//	for (auto listener : m_listeners) {
+//		listener->OnMoveMade();
+//	}
+//}
+//
+//void Game::NotifyGameOver()
+//{
+//	for (auto listener : m_listeners) {
+//		listener->OnGameOver();
+//	}
+//}
