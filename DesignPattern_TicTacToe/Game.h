@@ -39,22 +39,9 @@ public:
 	/// <returns>
 	/// The mode in wich the game ended.
 	/// </returns>
-	int CheckGameStatus() override;
+	EWinType CheckGameStatus() override;
 	/// <summary>
 	/// Change the current player after a move is made.
 	/// </summary>
 	void ChangePlayer() override;
-	/*void AddListener(IGameListenerPtr listener) override;
-	void RemoveListener(IGameListenerPtr listener) override;
-	void NotifyMoveMade();
-	void NotifyGameOver();*/
-
 };
-
-//#include "../DesignPattern_TicTacToe/Game.h" cale catre header ul respectiv
-
-//sa nu contina cod redundant
-//proiect de tip lib sau dll care sa contina logica jocului si 2 de ui care sa se lege la dll
-//sa avem o interfata
-//testarea in googlemok
-//diagrama UML

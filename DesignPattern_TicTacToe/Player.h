@@ -58,5 +58,4 @@ public:
 	/// The coordonates of the picked position.
 	/// </returns>
 	virtual std::pair<uint8_t, uint8_t> PickPosition(const std::vector<std::pair<uint8_t, uint8_t>>& availableCoordinates) = 0;
-	
 };

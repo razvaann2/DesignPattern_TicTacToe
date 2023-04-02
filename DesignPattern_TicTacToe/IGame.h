@@ -3,6 +3,19 @@
 #include <memory>
 #include "IGameListener.h"
 
+enum class EWinType
+{
+	Row1,
+	Row2,
+	Row3,
+	Column1,
+	Column2,
+	Column3,
+	MainDiagonal,
+	SecondaryDiagonal,
+	NoWin
+};
+
 using IGamePtr = std::shared_ptr<class IGame>;
 
 /// <summary>
@@ -17,7 +30,7 @@ public:
 	/// <returns>
 	/// The mode in wich the game ended.
 	/// </returns>
-	virtual int CheckGameStatus() = 0;
+	virtual EWinType CheckGameStatus() = 0;
 	/// <summary>
 	/// Change the current player after a move is made.
 	/// </summary>

@@ -35,7 +35,7 @@ void ConsoleGame()
 	Game consoleGame;
 	DisplayBoard(consoleGame, false);
 	consoleGame.ChangePlayer();
-	while (!consoleGame.m_board.GetAvailableCoordinates().empty() && consoleGame.CheckGameStatus() == -1)
+	while (!consoleGame.m_board.GetAvailableCoordinates().empty() && consoleGame.CheckGameStatus() == EWinType::NoWin)
 	{
 		consoleGame.ChangePlayer();
 		std::pair<uint8_t, uint8_t> coordonates = consoleGame.m_currentPlayer->PickPosition(consoleGame.m_board.GetAvailableCoordinates());

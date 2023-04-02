@@ -36,7 +36,7 @@ public:
 
 protected:
     void paintEvent(QPaintEvent* event) override;
-    void paintWinner(int i);
+    void paintWinner(EWinType i);
 private:
     Ui::TicTacToeUIClass ui;
 private slots:

@@ -25,7 +25,7 @@ TEST(GameTest, CheckGameStatusTest)
     newGame.m_board.AddSymbol(newGame.m_currentPlayer->GetSymbol(), std::make_pair<uint8_t, uint8_t>(2, 1));
     newGame.ChangePlayer();
     newGame.m_board.AddSymbol(newGame.m_currentPlayer->GetSymbol(), std::make_pair<uint8_t, uint8_t>(2, 2));
-    EXPECT_EQ(newGame.CheckGameStatus(), 6);
+    EXPECT_EQ(newGame.CheckGameStatus(), EWinType::MainDiagonal);
 }
 
 TEST(ComputerTest, PickPositionTest)

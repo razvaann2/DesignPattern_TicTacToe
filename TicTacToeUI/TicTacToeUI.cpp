@@ -57,7 +57,7 @@ void TicTacToeUI::paintEvent(QPaintEvent* event)
     painter.drawLine(width / 3, 0, width / 3, height);
     painter.drawLine(2 * width / 3, 0, 2 * width / 3, height);
 
-    if (game.CheckGameStatus() > -1)
+    if (game.CheckGameStatus() != EWinType::NoWin)
     {
         paintWinner(game.CheckGameStatus());
     }
@@ -82,7 +82,7 @@ void TicTacToeUI::paintEvent(QPaintEvent* event)
                 }
 
 
-                if (game.CheckGameStatus() > -1)
+                if (game.CheckGameStatus() != EWinType::NoWin)
                 {
                     paintWinner(game.CheckGameStatus());
                     this->update();
@@ -99,42 +99,42 @@ void TicTacToeUI::paintEvent(QPaintEvent* event)
         }
     }
 }
-void TicTacToeUI::paintWinner(int i)
+void TicTacToeUI::paintWinner(EWinType i)
 {
     QPainter painter(this);
     painter.setPen(Qt::red);
     painter.setOpacity(0.5);
     switch (i)
     {
-    case 3:
+    case EWinType::Row1:
         painter.drawLine(0, height() / 6, width(), height() / 6); // 1 linie
         update();
         break;
-    case 4:
+    case EWinType::Row2:
         painter.drawLine(0, height() / 2, width(), height() / 2); // 2 linie
         update();
         break;
-    case 5:
+    case EWinType::Row3:
         painter.drawLine(0, height() * 5 / 6, width(), height() * 5 / 6); // 3 linie
         update();
         break;
-    case 0:
+    case EWinType::Column1:
         painter.drawLine(width() / 6, 0, width() / 6, height()); // 1 coloana
         update();
         break;
-    case 1:
+    case EWinType::Column2:
         painter.drawLine(width() / 2, 0, width() / 2, height()); // 2 coloana
         update();
         break;
-    case 2:
+    case EWinType::Column3:
         painter.drawLine(width() * 5 / 6, 0, width() * 5 / 6, height()); // 3 coloana
         update();
         break;
-    case 6:
+    case EWinType::MainDiagonal:
         painter.drawLine(0, 0, width(), height()); // diag principala
         update();
         break;
-    case 7:
+    case EWinType::SecondaryDiagonal:
         painter.drawLine(0, height(), width(), 0); // diag secundara
         update();
         break;
@@ -154,7 +154,7 @@ void TicTacToeUI::onButtonClicked()
 
         buttons.erase(std::remove(buttons.begin(), buttons.end(), button), buttons.end());
         update();
-        if (game.CheckGameStatus() > -1)
+        if (game.CheckGameStatus() != EWinType::NoWin)
         {
             paintWinner(game.CheckGameStatus());
             this->update();
